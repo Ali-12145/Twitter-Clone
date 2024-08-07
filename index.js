@@ -11,6 +11,9 @@ document.addEventListener("click", function (e) {
     if (e.target.dataset.like) {
         handleLikeClick(e.target.dataset.like);
     }
+    else if (e.target.dataset.retweet) {
+        handleRetweetClick(e.target.dataset.retweet)
+    }
 })
 
 function handleLikeClick(tweetId) {
@@ -19,15 +22,28 @@ function handleLikeClick(tweetId) {
     })[0]
     if (!targetTweetObject.isLiked) {
         targetTweetObject.likes++
-        targetTweetObject.isLiked = true 
+        
     } else{
         targetTweetObject.likes--
-        targetTweetObject.isLiked = false
-        }
+    }
+    targetTweetObject.isLiked = !targetTweetObject.isLiked
     
     render();
 }
 
+
+function handleRetweetClick(tweetId) {
+    const targetTweetObject = tweetsData.filter(function (tweet) {
+        return tweet.uuid === tweetId
+    })[0]
+    if (!targetTweetObject.isRetweeted) {
+        targetTweetObject.retweets++
+    } else {
+        targetTweetObject.retweets--
+    }
+    targetTweetObject.isRetweeted = !targetTweetObject.isRetweeted
+    render()
+}
 
 
 
