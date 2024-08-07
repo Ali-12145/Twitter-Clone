@@ -115,7 +115,9 @@ textarea{
     line-height: 20px;
 }
 
-
+.hidden{
+    display: none;
+}
 
 
 
