@@ -15,6 +15,10 @@ i{
     cursor: pointer;
 }
 
+.fa-solid{
+    color: #999;
+}
+
 main,header{
     width: 300px;
     margin: 0 auto;
