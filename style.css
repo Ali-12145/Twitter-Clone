@@ -118,6 +118,9 @@ textarea{
 .hidden{
     display: none;
 }
+textarea:focus{
+    border: none;
+}
 
 
 
